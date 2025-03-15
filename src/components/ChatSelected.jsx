@@ -20,14 +20,12 @@ const ChatSelected = () => {
   const messageEndRef = useRef(null);
 
   useEffect(() => {
-    if (!selectedUser?._id) return; // Prevent errors
-  
     getMessages(selectedUser._id);
+
     subscribeToMessages();
-  
+
     return () => unsubscribeFromMessages();
-  }, [selectedUser, getMessages, subscribeToMessages, unsubscribeFromMessages]);
-  
+  }, [selectedUser._id, getMessages, subscribeToMessages, unsubscribeFromMessages]);
 
   useEffect(() => {
     if (messageEndRef.current && messages) {

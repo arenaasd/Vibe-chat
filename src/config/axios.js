@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-    baseURL: "https://chat-app-backend-theta-seven.vercel.app/api",
+    baseURL: "http://localhost:3000/api",
     withCredentials: true
 })
